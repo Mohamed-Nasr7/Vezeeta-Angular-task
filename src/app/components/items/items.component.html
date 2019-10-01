@@ -1,0 +1,83 @@
+<main>
+
+  <div class="container pb-4 flex-column">
+
+    
+      <div *ngFor="let item of items; let i = index"  class="row card" data-toggle="modal" data-target="#exampleModal" style="max-width: 540px;">
+        
+        <div *ngIf="i<=200" (click)="sendIndex(i)" class="row no-gutters">
+
+          <div class="col-sm-4 img p-4">
+            <img src={{item.url}} class="card-img" alt="img">
+          </div>
+
+          <div class="col-sm-8">
+            <div class="card-body p-0 pl-4">
+              <h5 class="card-title">{{item.title}}</h5> 
+              <span><i class="fa fa-star"></i></span>
+              <span>4.2</span>
+              
+              <p class="card-text spec"><i>Eye Specialist</i></p>
+              <p class="card-text">
+                <span><i class="fa fa-map-marker d-inline-block"></i></span>
+                <span class="text-muted">St.Bronxlyn 212</span>
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- Feedback Popup -->
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+              
+              <div class="modal-header ">
+                <h5 class="modal-title m-auto" id="exampleModalLabel">Give Feedback</h5>
+              </div>
+              
+              <div class="modal-body m-auto d-flex">
+                
+                <div class="col-sm-4 p-4  imgModal ">
+                    <img src={{items[index].url}} class="card-img" alt="img">
+                </div>
+                <div class=" pt-4">
+                    <h5 class="card-title">{{items[index].title}}</h5> 
+                    <p class="card-text spec"><i>Eye Specialist</i></p>    
+                </div>
+                
+              </div>
+
+              <div class="stars d-flex justify-content-center m-auto">
+                <i *ngFor="let x of arr" class="fa fa-star d-inline"></i>
+              </div>
+
+              <div class="feedback">
+                <p class="">Feedback</p>
+                <textarea class="form-control p-2" placeholder="Write Your Feedback"></textarea>
+              </div>
+
+
+
+              <div class="m-auto">
+                <div class=" d-flex flex-column">
+                  <button type="button" class="btn btn-primary my-2">Send</button>
+                  <button type="button" class="btn btn-secondary close  my-2" data-dismiss="modal">No, Thanks</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+  </div>
+
+</main>

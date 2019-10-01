@@ -1,0 +1,25 @@
+main{    
+    background-image: url('~src\assets\medical-appointment-doctor-healthcare-40568.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    min-height: 100vh;
+    min-width: 100%;
+    padding-bottom: 30px
+}
+
+
+
+.container{
+    height: 100%
+}
+
+.wrap{
+    border-radius: 10px;
+    background-color: rgba(240, 240, 240, 0.514);
+    padding: 20px;
+    margin-top: 8%;
+    margin-bottom: 500px
+}

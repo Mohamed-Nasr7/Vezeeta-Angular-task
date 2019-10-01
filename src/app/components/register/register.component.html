@@ -1,0 +1,80 @@
+<main class="mt-5">
+
+  
+    <section class="container pt-5">
+      
+
+
+        <form [formGroup]="form">
+  
+  
+          <div class="form-group my-4 upload">
+            <div class="custom-file text-center">
+              <input type="file" class="custom-file-input" id="customFile">
+              <div class="content">
+                <span class="d-block"><i class="fa fa-user"></i></span>
+                <label for="customFile">Upload Image</label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group mb-4">
+            <div class="col-12 mb-3">
+                <label for="name">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Full Name" formControlName="name" [ngClass]="{'is-invalid': form.controls.name.touched && form.controls.name.invalid}">
+            </div>
+          </div>
+  
+          <div class="form-group mb-4">
+            <div class="col-12 mb-3">
+                <label for="pass">Password</label>
+              <input type="text" class="form-control" id="pass" placeholder="Your Password" formControlName="pass" [ngClass]="{'is-invalid': form.controls.pass.touched && form.controls.pass.invalid}">
+            </div>
+          </div>
+
+          <div class="form-group mb-4">
+            <div class="col-12 mb-3">
+                <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Your Email" formControlName="email" [ngClass]="{'is-invalid': form.controls.email.touched && form.controls.email.invalid}">
+            </div>
+          </div>
+        
+        
+          <div class="form-group mb-4">
+            <div class="col-12 mb-3">
+                <label for="birth">Birthday</label>
+              <input type="text" class="form-control" id="birth" placeholder="dd/mm/yy" formControlName="birth">
+            </div>
+          </div>
+        
+
+          <div class="form-group mb-4">
+            <div class="col-12 mb-3">
+                <label for="phone">Phone Number</label>
+              <input type="text" class="form-control" id="phone" placeholder="Your Phone Number" formControlName="phone">
+            </div>
+          </div>
+
+          <div class="form-group mb-4">
+            <div class="col-12 mb-3">
+                <label for="address">Location/Address</label>
+              <input type="text" class="form-control" id="address" placeholder="Your Location" formControlName="address">
+            </div>
+          </div>
+          
+          <div class="form-group mt-5 text-center">
+              <div class="col-12 mb-3">
+                  <button type="submit" [disabled]="!form.valid" (click)="next()" class="btn form-row" >Next</button>
+              </div>
+              
+          </div>
+          
+  
+        </form>
+
+
+      
+
+    </section>
+  </main>
+  
