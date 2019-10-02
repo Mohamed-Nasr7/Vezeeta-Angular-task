@@ -1,25 +1,25 @@
 <main>
 
 
-  <div class="container">
+  <div class="container p-5">
   
     <div class="row wrap  justify-content-center ">
         
-      <div class="card" style="width: 29rem;">
+      <div class="card">
             
         <div class="card-header d-flex flex-row">
-          <input type="text" [(ngModel)]="text" class="form-control mr-2"/>
+          <input type="text" [(ngModel)]="text" class="form-control mr-4"/>
           <button type="button" (click)= "add(); text=''" [disabled]="!text" class="btn btn-primary ">Add</button>
         </div>
 
         <ul *ngFor="let item of list; let i = index" class="list-group list-group-flush">
-          <li class="list-group-item d-flex flex-row" *ngIf="i != togIndex">
+          <li class="list-group-item d-flex flex-row" *ngIf="i != itemIndex">
             <p class="my-0 d-flex align-items-center flex-grow-1"> {{item.name}}</p>
             <button type="button" class="btn btn-success mr-2" (click)="edit(i)">Edit</button>
             <button type="button" class="btn btn-danger" (click)="delete(item, i)">Delete</button>
           </li>
 
-          <li class="list-group-item d-flex flex-row" *ngIf="i == togIndex">
+          <li class="list-group-item d-flex flex-row" *ngIf="i == itemIndex">
               <input type="text" [value]="item.name" #inputVal class="form-control mr-2"/>
               <button type="button" class="btn btn-success mr-2" (click)="update(item, inputVal.value)">Update</button>
           </li>

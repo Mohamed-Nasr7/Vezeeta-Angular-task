@@ -1,11 +1,11 @@
 <main class="mt-5">
 
   
-    <section class="container pt-5">
+    <section class="container pt-5 ">
       
 
 
-        <form [formGroup]="form">
+        <form [formGroup]="form" class="px-5">
   
   
           <div class="form-group my-4 upload">
@@ -62,7 +62,7 @@
             </div>
           </div>
           
-          <div class="form-group mt-5 text-center">
+          <div class="form-group my-5 text-center">
               <div class="col-12 mb-3">
                   <button type="submit" [disabled]="!form.valid" (click)="next()" class="btn form-row" >Next</button>
               </div>

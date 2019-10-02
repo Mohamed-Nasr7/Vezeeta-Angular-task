@@ -14,8 +14,11 @@ export class ItemsComponent implements OnInit {
 
 
   items:Item[]=[];
-  index:number=0;
-  arr = new Array(5);
+
+  index:number=0; /* to get the index of the clicked card */
+  
+  arr = new Array(5); /* array to generate stars in Modal */
+
 
   constructor(private listService: ListService) { }
 

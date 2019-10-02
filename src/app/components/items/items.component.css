@@ -40,7 +40,7 @@ p.spec{
 
 .fa-star{
     color: rgb(255, 217, 0);
-    margin: 10px;
+    margin: 10px 10px 10px 0;
 }
 .fa-map-marker{
     margin-right: 7px

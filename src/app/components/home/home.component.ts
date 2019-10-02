@@ -14,8 +14,8 @@ export class HomeComponent implements OnInit {
 
   list:List[] = []; /* Creating new array of objects to store the data coming from GET request */
 
-  text:string='';
-  togIndex:number;
+  text:any;
+  itemIndex:number;
 
 
   /* Injecting Service */
@@ -39,11 +39,8 @@ export class HomeComponent implements OnInit {
 
     this.listService.addItem(newItem).subscribe(response=>{
 
-      let id:number=response as number;
-      newItem.id = id;
-
       this.list.unshift(newItem); /* Adding this new object to the array */
-      console.log(newItem);
+      console.log(typeof(newItem.name));
       
     })
   }
@@ -61,18 +58,17 @@ export class HomeComponent implements OnInit {
 
 
   edit(i:number){
-    this.togIndex = i;
+    this.itemIndex = i;
   }
 
 
   update(item:List, name:string){
-    this.togIndex = undefined;
+    this.itemIndex = undefined;
     this.listService.updateItem(item).subscribe(res=>{
+      });
       this.list.map(obj=>{
         if(obj.id == item.id) {obj.name = name}
-      });
 
-      console.log(res);
     })
   }
 
